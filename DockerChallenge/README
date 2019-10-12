@@ -1,0 +1,11 @@
+## Build the image
+git clone https://github.com/raviranjan5937/devopstask_oct2019.git
+cd devopstask_oct2019/DockerChallenge
+docker build -t pebble .
+
+Launch Pebble container:
+docker run --name pebblecontaniner -p 8080:8080 -d pebble /bin/bash
+
+How to use:
+Access pebble using below URL
+http://<URL>:<PORT>/pebble-2.6.4
