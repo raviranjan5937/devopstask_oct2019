@@ -1,0 +1,13 @@
+---
+- hosts: default
+  sudo: yes
+  tasks:
+  - name: "Copying configuration file into the target location ..."
+    copy:
+        src=/home/app-config.conf
+        dest=/etc/
+        owner=root
+        group=groupname
+        mode=0644
+    register: output
+  - debug: var=output.stdout_lines

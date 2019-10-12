@@ -1,11 +1,11 @@
-## Build the image
-git clone https://github.com/raviranjan5937/devopstask_oct2019.git
-cd devopstask_oct2019/DockerChallenge
-docker build -t pebble .
+FROM tomcat
+COPY tomcat-users.xml /usr/local/tomcat/conf/
+COPY manager.xml /usr/local/tomcat/conf/Catalina/localhost/
+COPY context.xml /usr/local/tomcat/webapps/host-manager/META-INF/
+RUN wget https://excellmedia.dl.sourceforge.net/project/pebble/pebble/2.6.4/pebble-2.6.4.zip  -P /tmp \
+  && unzip /tmp/pebble-2.6.4.zip -d /opt \
+  && cp /opt/pebble-2.6.4/pebble-2.6.4.war /usr/local/tomcat/webapps \
+  && rm /tmp/pebble-2.6.4.zip
 
-Launch Pebble container:
-docker run --name pebblecontaniner -p 8080:8080 -d pebble /bin/bash
-
-How to use:
-Access pebble using below URL
-http://<URL>:<PORT>/pebble-2.6.4
+EXPOSE 8080
+CMD ["catalina.sh", "run"]

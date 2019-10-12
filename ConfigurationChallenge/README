@@ -1,0 +1,3 @@
+## Configuration deployment to the remote server using the ansible playbook
+
+ansible-playbook deployment_config.yml --ask-sudo-pass

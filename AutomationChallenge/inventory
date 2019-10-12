@@ -1,0 +1,14 @@
+[default ]
+hostname_1
+hostname_2
+hostname_3
+hostname_4
+
+[ apache_hosts ]
+apache_host_1
+apache_host_2
+apache_host_3
+apache_host_4
+apache_host_5
+apache_host_6
+apache_host_7
